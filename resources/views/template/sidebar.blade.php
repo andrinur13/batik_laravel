@@ -23,14 +23,30 @@
 
 <!-- Heading -->
 <div class="sidebar-heading">
-    Interface
+    Paguyuban
 </div>
 
-<!-- Nav Item - Pages Collapse Menu -->
+<!-- nav paguyuban -->
+<li class="nav-item">
+    <a class="nav-link collapsed" href="#">
+        <i class="fas fa-fw fa-users"></i>
+        <span>Paguyuban</span>
+    </a>
+</li>
+
+<!-- Divider -->
+<hr class="sidebar-divider">
+
+<!-- Heading -->
+<div class="sidebar-heading">
+    Pembatik
+</div>
+
+<!-- nav pembatik -->
 <li class="nav-item">
     <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
-        <i class="fas fa-fw fa-cog"></i>
-        <span>Components</span>
+        <i class="fas fa-fw fa-user-friends"></i>
+        <span>Pembatik</span>
     </a>
     <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
         <div class="bg-white py-2 collapse-inner rounded">
