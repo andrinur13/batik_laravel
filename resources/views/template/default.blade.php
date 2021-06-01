@@ -41,9 +41,9 @@
             </div>
 
             <!-- footer -->
-            <div>
-                <!-- @include('template/footer') -->
-            </div>
+            <!-- <div>
+                @include('template/footer')
+            </div> -->
         </div>
     </div>
 
