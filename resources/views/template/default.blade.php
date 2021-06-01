@@ -25,7 +25,7 @@
 
     <div id="wrapper">
         <!-- sidebar -->
-        <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
+        <ul class="navbar-nav bg-gradient-dark sidebar sidebar-dark accordion" id="accordionSidebar">
             @include('template/sidebar')
         </ul>
         
