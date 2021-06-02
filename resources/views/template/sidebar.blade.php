@@ -28,7 +28,7 @@
 
 <!-- nav paguyuban -->
 <li class="nav-item">
-    <a class="nav-link collapsed" href="#">
+    <a class="nav-link collapsed" href="/dashboard/paguyuban">
         <i class="fas fa-fw fa-users"></i>
         <span>Paguyuban</span>
     </a>

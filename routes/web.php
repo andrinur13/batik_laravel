@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\PaguyubanController;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,6 +19,9 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/dashboard', function () {
-    return view('dashboard/index');
-});
+Route::get('/dashboard', [DashboardController::class, 'index']);
+
+
+Route::get('/dashboard/paguyuban', [PaguyubanController::class, 'index']);
+Route::post('/dashboard/paguyuban/add', [PaguyubanController::class], 'store');
+Route::get('/dashboard/paguyuban/delete/{id}', [PaguyubanController::class, 'delete']);
