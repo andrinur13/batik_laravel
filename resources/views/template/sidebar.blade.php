@@ -1,7 +1,7 @@
 <!-- Sidebar -->
 
 <!-- Sidebar - Brand -->
-<a class="sidebar-brand d-flex align-items-center justify-content-center" href="/dashboard">
+<a class="sidebar-brand d-flex align-items-center justify-content-center" href="{{url('/dashboard')}}">
     <div class="sidebar-brand-icon rotate-n-15">
         <i class="fas fa-laugh-wink"></i>
     </div>
@@ -13,7 +13,7 @@
 
 <!-- Nav Item - Dashboard -->
 <li class="nav-item active">
-    <a class="nav-link" href="/dashboard">
+    <a class="nav-link" href="{{url('/dashboard')}}">
         <i class="fas fa-fw fa-tachometer-alt"></i>
         <span>Dashboard</span></a>
 </li>
@@ -28,7 +28,7 @@
 
 <!-- nav paguyuban -->
 <li class="nav-item">
-    <a class="nav-link collapsed" href="/dashboard/paguyuban">
+    <a class="nav-link collapsed" href="{{url('/dashboard/paguyuban')}}">
         <i class="fas fa-fw fa-users"></i>
         <span>Paguyuban</span>
     </a>
@@ -44,7 +44,7 @@
 
 <!-- nav pembatik -->
 <li class="nav-item">
-    <a class="nav-link collapsed" href="#">
+    <a class="nav-link collapsed" href="{{ url('/dashboard/pembatik') }}">
         <i class="fas fa-fw fa-user-friends"></i>
         <span>Pembatik</span>
     </a>
