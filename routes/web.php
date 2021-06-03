@@ -23,5 +23,5 @@ Route::get('/dashboard', [DashboardController::class, 'index']);
 
 
 Route::get('/dashboard/paguyuban', [PaguyubanController::class, 'index']);
-Route::post('/dashboard/paguyuban/add', [PaguyubanController::class], 'store');
+Route::post('/dashboard/paguyuban/store', [PaguyubanController::class, 'store']);
 Route::get('/dashboard/paguyuban/delete/{id}', [PaguyubanController::class, 'delete']);

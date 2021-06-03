@@ -16,7 +16,8 @@ class PaguyubanController extends Controller
 
 
     public function store(Request $request) {
-        dd($request->all());
+        PaguyubanModel::insert(['nama_paguyuban' => $request->nama_paguyuban]);
+        return redirect('/dashboard/paguyuban');
     }
 
     public function delete($id) {

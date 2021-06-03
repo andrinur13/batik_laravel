@@ -47,11 +47,12 @@
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
-            <form method="POST" action="paguyuban/add">
+            <form method="POST" action="paguyuban/store">
+                {{ csrf_field() }}
                 <div class="modal-body">
                     <div class="form-group">
                         <label for="nama-paguyuban">Nama Paguyuban</label>
-                        <input type="text" class="form-control" id="nama-paguyuban" placeholder="Nama Paguyuban">
+                        <input type="text" class="form-control" name="nama_paguyuban" required placeholder="Nama Paguyuban">
                     </div>
                 </div>
                 <div class="modal-footer">

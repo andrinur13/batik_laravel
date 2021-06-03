@@ -9,7 +9,7 @@ class PaguyubanModel extends Model
 {
     use HasFactory;
     protected $table = 'paguyuban';
-    // protected $primaryKey = 'id';
+    public $timestamps = false;
 
     protected $fillable = ['id', 'nama_paguyuban'];
 }
