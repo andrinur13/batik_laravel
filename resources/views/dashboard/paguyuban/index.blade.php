@@ -7,8 +7,8 @@
             <div class="card shadow mb-4">
                 <div class="card-body">
                     <h5 class="font-weight-bold">Data Paguyuban</h5>
-                    <hr>
-                    <button class="btn btn-sm btn-primary my-1" data-toggle="modal" data-target="#add-paguyuban">Tambah Data</button>
+                    <!-- <hr>
+                    <button class="btn btn-sm btn-primary my-1" data-toggle="modal" data-target="#add-paguyuban">Tambah Data</button> -->
                     <hr>
                     <div class="table-responsive">
                         <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
@@ -16,7 +16,7 @@
                                 <tr>
                                     <th>Paguyuban</th>
                                     <th>Kode</th>
-                                    <th style="width: fit-content">Aksi</th>
+                                    <!-- <th style="width: fit-content">Aksi</th> -->
                                 </tr>
                             </thead>
                             <tbody>
@@ -24,9 +24,9 @@
                                 <tr>
                                     <td> {{ $index['nama_paguyuban'] }} </td>
                                     <td> {{ $index['kode'] }} </td>
-                                    <td>
+                                    <!-- <td>
                                         <a href="/dashboard/paguyuban/delete/{{ $index['id'] }}" class="badge badge-danger">Delete</a>
-                                    </td>
+                                    </td> -->
                                 </tr>
                                 @endforeach
                             </tbody>

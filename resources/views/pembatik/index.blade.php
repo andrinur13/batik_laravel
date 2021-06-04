@@ -7,8 +7,8 @@
             <div class="card shadow mb-4">
                 <div class="card-body">
                     <h5 class="font-weight-bold">Data Pembatik</h5>
-                    <hr>
-                    <button class="btn btn-sm btn-primary my-1" data-toggle="modal" data-target="#add-pembatik">Tambah Data</button>
+                    <!-- <hr>
+                    <button class="btn btn-sm btn-primary my-1" data-toggle="modal" data-target="#add-pembatik">Tambah Data</button> -->
                     <hr>
                     <div class="table-responsive">
                         <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
@@ -17,7 +17,7 @@
                                     <th>Kode</th>
                                     <th>Nama Pembatik</th>
                                     <th>Paguyuban</th>
-                                    <th style="width: fit-content">Aksi</th>
+                                    <!-- <th style="width: fit-content">Aksi</th> -->
                                 </tr>
                             </thead>
                             <tbody>
@@ -26,10 +26,10 @@
                                     <td> {{$index['kode_pembatik']}} </td>
                                     <td> {{$index['nama_pembatik']}} </td>
                                     <td> {{$index['kode_paguyuban']}} </td>
-                                    <td>
+                                    <!-- <td>
                                         @php($urldelete = '/dashboard/pembatik/delete/')
                                         <a href="{{ url($urldelete) . '/' . $index['id'] }}" class="badge badge-danger">Hapus</a>
-                                    </td>
+                                    </td> -->
                                 </tr>
                                 @endforeach
                             </tbody>

@@ -40,7 +40,14 @@
         <i class="fas fa-fw fa-user-friends"></i>
         <span>Pembatik</span>
     </a>
-    
+</li>
+
+<!-- nav batik -->
+<li class="nav-item">
+    <a class="nav-link collapsed" href="{{ url('/dashboard/batik') }}">
+        <i class="fas fa-fw fa-user-friends"></i>
+        <span>Batik</span>
+    </a>
 </li>
 
 <!-- Nav Item - Utilities Collapse Menu -->
