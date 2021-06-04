@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\BatikController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\PaguyubanController;
@@ -31,3 +32,6 @@ Route::get('/dashboard/paguyuban/delete/{id}', [PaguyubanController::class, 'del
 Route::get('/dashboard/pembatik', [PembatikController::class, 'index']);
 Route::post('/dashboard/pembatik/store', [PembatikController::class, 'store']);
 Route::get('/dashboard/pembatik/delete/{id}', [PembatikController::class, 'delete']);
+
+// batik
+Route::get('/dashboard/batik', [BatikController::class, 'index']);

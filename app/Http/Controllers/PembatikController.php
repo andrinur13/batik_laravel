@@ -13,7 +13,7 @@ class PembatikController extends Controller
     {
         $dataPembatik = PembatikModel::get()->toArray();
         $dataPaguyuban = PaguyubanModel::get()->toArray();
-        return view('pembatik/index', ['pembatik' => $dataPembatik, 'paguyuban' => $dataPaguyuban]);
+        return view('dashboard/pembatik/index', ['pembatik' => $dataPembatik, 'paguyuban' => $dataPaguyuban]);
     }
 
     public function store(Request $request)
