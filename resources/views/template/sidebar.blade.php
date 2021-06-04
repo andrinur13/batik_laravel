@@ -23,7 +23,7 @@
 
 <!-- Heading -->
 <div class="sidebar-heading">
-    Paguyuban
+    Data
 </div>
 
 <!-- nav paguyuban -->
@@ -33,14 +33,6 @@
         <span>Paguyuban</span>
     </a>
 </li>
-
-<!-- Divider -->
-<hr class="sidebar-divider">
-
-<!-- Heading -->
-<div class="sidebar-heading">
-    Pembatik
-</div>
 
 <!-- nav pembatik -->
 <li class="nav-item">
