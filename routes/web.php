@@ -5,6 +5,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\PaguyubanController;
 use App\Http\Controllers\PembatikController;
+use App\Http\Controllers\PewarnaanController;
+use App\Http\Controllers\QRCodeController;
 
 /*
 |--------------------------------------------------------------------------
@@ -35,3 +37,10 @@ Route::get('/dashboard/pembatik/delete/{id}', [PembatikController::class, 'delet
 
 // batik
 Route::get('/dashboard/batik', [BatikController::class, 'index']);
+
+// pewarnaan
+Route::get('dashboard/pewarnaan', [PewarnaanController::class, 'index']);
+
+// qrcode
+Route::get('dashboard/qrcode/', [QRCodeController::class, 'index']);
+Route::post('dashboard/qrcode/store', [QRCodeController::class, 'store']);

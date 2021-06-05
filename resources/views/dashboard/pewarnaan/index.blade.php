@@ -6,7 +6,7 @@
         <div class="col-lg col-sm-10">
             <div class="card shadow mb-4">
                 <div class="card-body">
-                    <h5 class="font-weight-bold">Data Batik</h5>
+                    <h5 class="font-weight-bold">Data Pembatik</h5>
                     <!-- <hr>
                     <button class="btn btn-sm btn-primary my-1" data-toggle="modal" data-target="#add-pembatik">Tambah Data</button> -->
                     <hr>
@@ -15,15 +15,15 @@
                             <thead>
                                 <tr>
                                     <th>Kode</th>
-                                    <th>Nama Batik</th>
+                                    <th>Pelaku</th>
                                     <!-- <th style="width: fit-content">Aksi</th> -->
                                 </tr>
                             </thead>
                             <tbody>
-                                @foreach($batik as $index)
+                                @foreach($pewarnaan as $index)
                                 <tr>
                                     <td> {{$index['kode']}} </td>
-                                    <td> {{$index['nama_batik']}} </td>
+                                    <td> {{$index['pelaku']}} </td>
                                     <!-- <td>
                                         @php($urldelete = '/dashboard/pembatik/delete/')
                                         <a href="{{ url($urldelete) . '/' . $index['id'] }}" class="badge badge-danger">Hapus</a>
@@ -38,8 +38,4 @@
         </div>
     </div>
 </div>
-
-<!-- modal add data paguyuban -->
-<!-- Modal -->
-
 @endsection

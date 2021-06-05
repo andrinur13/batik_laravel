@@ -37,7 +37,7 @@
 <!-- nav pembatik -->
 <li class="nav-item">
     <a class="nav-link collapsed" href="{{ url('/dashboard/pembatik') }}">
-        <i class="fas fa-fw fa-user-friends"></i>
+        <i class="fas fa-fw fa-palette"></i>
         <span>Pembatik</span>
     </a>
 </li>
@@ -45,7 +45,7 @@
 <!-- nav batik -->
 <li class="nav-item">
     <a class="nav-link collapsed" href="{{ url('/dashboard/batik') }}">
-        <i class="fas fa-fw fa-user-friends"></i>
+        <i class="fas fa-fw fa-tshirt"></i>
         <span>Batik</span>
     </a>
 </li>
@@ -53,7 +53,7 @@
 <!-- nav batik -->
 <li class="nav-item">
     <a class="nav-link collapsed" href="{{ url('/dashboard/pewarnaan') }}">
-        <i class="fas fa-fw fa-user-friends"></i>
+        <i class="fas fa-fw fa-fill-drip"></i>
         <span>Pewarnaan</span>
     </a>
 </li>
@@ -67,8 +67,8 @@
 
 <!-- Nav Item - Utilities Collapse Menu -->
 <li class="nav-item">
-    <a class="nav-link collapsed" href="#">
-        <i class="fas fa-fw fa-wrench"></i>
+    <a class="nav-link collapsed" href="qrcode">
+        <i class="fas fa-fw fa-qrcode"></i>
         <span>Kode (QR)</span>
     </a>
 </li>
