@@ -20,7 +20,16 @@
                                     <th>Aksi</th>
                                 </tr>
                             </thead>
-                            
+                            <tbody>
+                                <tr>
+                                    @foreach($qrcode as $qc)
+                                    <td> <img class="img-fluid" style="width: 50px" src="{{$qc['path_img']}}" alt=""> </td>
+                                    <td class="font-weight-bold"> {{$qc['qrcode']}} </td>
+                                    <td> <img style="width: 50px" src="{{$qc['path_qrcode']}}" alt=""> </td>
+                                    <td> <span class="badge badge-primary">aksi</span> </td>
+                                    @endforeach
+                                </tr>
+                            </tbody>
                         </table>
                     </div>
                 </div>
@@ -40,7 +49,7 @@
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
-            <form method="POST" action="{{ url('/dashboard/qrcode/store') }}">
+            <form method="POST" action="{{ url('/dashboard/qrcode/store') }}" enctype="multipart/form-data">
                 {{ csrf_field() }}
                 <div class="modal-body">
 
@@ -82,6 +91,11 @@
                             <option value="{{ $pwr['kode'] }}"> {{$pwr['pelaku']}} </option>
                             @endforeach
                         </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="foto-batik">Foto Batik</label>
+                        <input type="file" class="form-control" name="foto_batik" required>
                     </div>
 
                 </div>
