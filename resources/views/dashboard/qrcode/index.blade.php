@@ -40,7 +40,7 @@
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
-            <form method="POST" action="qrcode/store">
+            <form method="POST" action="{{ url('/dashboard/qrcode/store') }}">
                 {{ csrf_field() }}
                 <div class="modal-body">
 
