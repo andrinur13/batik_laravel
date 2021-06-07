@@ -21,14 +21,14 @@
                                 </tr>
                             </thead>
                             <tbody>
+                                @foreach($qrcode as $qc)
                                 <tr>
-                                    @foreach($qrcode as $qc)
                                     <td> <img class="img-fluid" style="width: 50px" src="{{$qc['path_img']}}" alt=""> </td>
                                     <td class="font-weight-bold"> {{$qc['qrcode']}} </td>
                                     <td> <img style="width: 50px" src="{{$qc['path_qrcode']}}" alt=""> </td>
                                     <td> <span class="badge badge-primary">aksi</span> </td>
-                                    @endforeach
                                 </tr>
+                                @endforeach
                             </tbody>
                         </table>
                     </div>

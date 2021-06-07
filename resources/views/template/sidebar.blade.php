@@ -67,7 +67,7 @@
 
 <!-- Nav Item - Utilities Collapse Menu -->
 <li class="nav-item">
-    <a class="nav-link collapsed" href="qrcode">
+    <a class="nav-link collapsed" href="{{ url('/dashboard/qrcode') }}">
         <i class="fas fa-fw fa-qrcode"></i>
         <span>Kode (QR)</span>
     </a>
