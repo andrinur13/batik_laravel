@@ -77,6 +77,8 @@
 
     <!-- Page level custom scripts -->
     <script src="{{ asset('theme/js/demo/datatables-demo.js') }}"></script>
+
+    @yield('script-custom')
 </body>
 
 </html>

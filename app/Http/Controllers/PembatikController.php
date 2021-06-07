@@ -33,4 +33,12 @@ class PembatikController extends Controller
 
         return redirect('/dashboard/pembatik');
     }
+
+    public function queryPembatikByPaguyuban($kode) {
+        $hasilQuery = PembatikModel::where(['kode_paguyuban' => $kode])->get()->toArray();
+
+        return response()->json([
+            'batik' => $hasilQuery
+        ], 200);
+    }
 }

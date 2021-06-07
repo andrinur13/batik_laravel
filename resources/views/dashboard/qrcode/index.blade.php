@@ -1,7 +1,7 @@
 @extends('template.default')
 
 @section('content')
-<div class="">
+<div>
     <div class="row">
         <div class="col-lg col-sm-10">
             <div class="card shadow mb-4">
@@ -41,7 +41,7 @@
 <!-- modal add data paguyuban -->
 <!-- Modal -->
 <div class="modal fade" id="add-qrcode" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-dialog modal-dialog-centered" id="app" role="document">
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title" id="exampleModalLabel">Tambah Data QRCode</h5>
@@ -65,8 +65,8 @@
 
                     <div class="form-group">
                         <label for="nama-paguyuban">Nama Paguyuban</label>
-                        <select class="custom-select" name="nama_paguyuban">
-                            <option selected>Pilih Paguyuban...</option>
+                        <select class="custom-select" name="nama_paguyuban" v-model="filled.paguyuban">
+                            <option value="null" selected>Pilih Paguyuban...</option>
                             @foreach($paguyuban as $pgy)
                             <option value="{{ $pgy['kode'] }}"> {{$pgy['nama_paguyuban']}} </option>
                             @endforeach
@@ -75,11 +75,9 @@
 
                     <div class="form-group">
                         <label for="nama_pembatik">Nama Pembatik</label>
-                        <select class="custom-select" name="nama_pembatik">
-                            <option selected>Pilih Pembatik...</option>
-                            @foreach($pembatik as $pmb)
-                            <option value="{{ $pmb['kode_pembatik'] }}"> {{$pmb['nama_pembatik']}} </option>
-                            @endforeach
+                        <select class="custom-select" name="nama_pembatik" v-model="filled.pembatik">
+                            <option selected value="null">Pilih Pembatik...</option>
+                            <option v-for="item in options.pembatik" :value="item.id" v-text="item.nama_pembatik"></option>
                         </select>
                     </div>
 
@@ -107,4 +105,34 @@
         </div>
     </div>
 </div>
+@endsection
+
+@section('script-custom')
+<script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+<script>
+    var app = new Vue({
+        el: '#app',
+        data: {
+            message: 'Hello Vue!',
+            filled: {
+                paguyuban: null,
+                pembatik: null
+            },
+
+            options: {
+                pembatik: []
+            }
+        },
+
+        watch: {
+            "filled.paguyuban": function() {
+                fetch(`http://localhost:8000/api/pembatikpaguyuban/${this.filled.paguyuban}`).then(response => response.json()).then(
+                    json => {
+                        this.options.pembatik = json.batik;
+                    }
+                );
+            }
+        }
+    })
+</script>
 @endsection
