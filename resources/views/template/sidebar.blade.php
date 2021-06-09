@@ -62,7 +62,7 @@
 
 <!-- qr code -->
 <div class="sidebar-heading">
-    Data Kode (QR)
+    Kodefikasi
 </div>
 
 <!-- Nav Item - Utilities Collapse Menu -->
