@@ -30,10 +30,9 @@ class QRCodeController extends Controller
     }
     
     public function store(Request $request) {
-        dd($request->all());
 
         $code_template = "N.T.DIY";
-        $code_from_input = $request->nama_paguyuban . '.' . $request->nama_pembatik . '-' . $request->motif_batik . '.' . $request->pewarnaan . '-' . time();
+        $code_from_input = $request->nama_paguyuban . '.' . $request->nama_pembatik . '.' . $request->motif_batik . '.' . $request->pewarnaan . '-' . time();
         $code_for_qr = $code_template . '.' . $code_from_input;
         $fileIMG = $request->file('foto_batik');
         $pathQRCode = '/' . 'qrcodes/' . $code_for_qr . '.svg';

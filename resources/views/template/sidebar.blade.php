@@ -51,12 +51,12 @@
 </li>
 
 <!-- nav batik -->
-<li class="nav-item">
+<!-- <li class="nav-item">
     <a class="nav-link collapsed" href="{{ url('/dashboard/pewarnaan') }}">
         <i class="fas fa-fw fa-fill-drip"></i>
         <span>Pewarnaan</span>
     </a>
-</li>
+</li> -->
 
 <hr class="sidebar-divider">
 

@@ -3,7 +3,7 @@
 @section('content')
 <div>
     <div class="row">
-        <div class="col-lg col-sm-10">
+        <div class="col-lg col-md col-sm">
             <div class="card shadow mb-4">
                 <div class="card-body">
                     <h5 class="font-weight-bold">Data QR Code</h5>
@@ -77,16 +77,16 @@
                         <label for="nama_pembatik">Nama Pembatik</label>
                         <select class="custom-select" name="nama_pembatik" v-model="filled.pembatik">
                             <option selected value="null">Pilih Pembatik...</option>
-                            <option v-for="item in options.pembatik" :value="item.id" v-text="item.nama_pembatik"></option>
+                            <option v-for="item in options.pembatik" :value="item.kode_pembatik" v-text="item.nama_pembatik"></option>
                         </select>
                     </div>
 
                     <div class="form-group">
                         <label for="pewarnaan">Pewarnaan</label>
-                        <select class="custom-select" name="pewarnaan">
-                            <option selected>Pilih Pewarnaan...</option>
+                        <select class="custom-select" name="pewarnaan" v-model="filled.pewarnaan">
+                            <option selected value="null">Pilih Pewarnaan...</option>
                             <option value="EX">Eksternal</option>
-                            <option v-for="item in options.pewarnaan" :value="item.id" v-text="item.nama_pembatik"> </option>
+                            <option v-for="item in options.pewarnaan" :value="item.kode_pembatik" v-text="item.nama_pembatik"> </option>
                         </select>
                     </div>
 
@@ -113,6 +113,7 @@
         el: '#app',
         data: {
             message: 'Hello Vue!',
+            urlSite: '<?= env("APP_URL"); ?>',
             filled: {
                 paguyuban: null,
                 pembatik: null,
@@ -127,14 +128,15 @@
 
         watch: {
             "filled.paguyuban": function() {
-                fetch(`http://localhost:8000/api/pembatikpaguyuban/${this.filled.paguyuban}`).then(response => response.json()).then(
+                fetch(`${this.urlSite}/api/pembatikpaguyuban/${this.filled.paguyuban}`).then(response => response.json()).then(
                     json => {
                         this.options.pembatik = json.batik;
                     }
                 );
 
-                fetch(`http://localhost:8000/api/pembatikpewarna/${this.filled.paguyuban}`).then(response => response.json()).then(
+                fetch(`${this.urlSite}/api/pembatikpewarna/${this.filled.paguyuban}`).then(response => response.json()).then(
                     json => {
+                        console.log(json);
                         this.options.pewarnaan = json.pewarna;
                     }
                 );

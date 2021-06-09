@@ -20,7 +20,7 @@ use App\Http\Controllers\QRCodeController;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return redirect('/dashboard');
 });
 
 Route::get('/dashboard', [DashboardController::class, 'index']);
