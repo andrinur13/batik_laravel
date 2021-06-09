@@ -85,9 +85,8 @@
                         <label for="pewarnaan">Pewarnaan</label>
                         <select class="custom-select" name="pewarnaan">
                             <option selected>Pilih Pewarnaan...</option>
-                            @foreach($pewarnaan as $pwr)
-                            <option value="{{ $pwr['kode'] }}"> {{$pwr['pelaku']}} </option>
-                            @endforeach
+                            <option value="EX">Eksternal</option>
+                            <option v-for="item in options.pewarnaan" :value="item.id" v-text="item.nama_pembatik"> </option>
                         </select>
                     </div>
 
@@ -116,11 +115,13 @@
             message: 'Hello Vue!',
             filled: {
                 paguyuban: null,
-                pembatik: null
+                pembatik: null,
+                pewarnaan: null,
             },
 
             options: {
-                pembatik: []
+                pembatik: [],
+                pewarnaan: []
             }
         },
 
@@ -129,6 +130,12 @@
                 fetch(`http://localhost:8000/api/pembatikpaguyuban/${this.filled.paguyuban}`).then(response => response.json()).then(
                     json => {
                         this.options.pembatik = json.batik;
+                    }
+                );
+
+                fetch(`http://localhost:8000/api/pembatikpewarna/${this.filled.paguyuban}`).then(response => response.json()).then(
+                    json => {
+                        this.options.pewarnaan = json.pewarna;
                     }
                 );
             }

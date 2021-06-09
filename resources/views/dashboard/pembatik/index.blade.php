@@ -17,6 +17,7 @@
                                     <th>Kode</th>
                                     <th>Nama Pembatik</th>
                                     <th>Paguyuban</th>
+                                    <th>Pewarna</th>
                                     <!-- <th style="width: fit-content">Aksi</th> -->
                                 </tr>
                             </thead>
@@ -26,6 +27,13 @@
                                     <td> {{$index['kode_pembatik']}} </td>
                                     <td> {{$index['nama_pembatik']}} </td>
                                     <td> {{$index['kode_paguyuban']}} </td>
+                                    <td>
+                                        @if($index['pewarna'] == 1)
+                                        <span class="badge badge-primary">Pewarna</span>
+                                        @else
+                                        <span class="badge badge-secondary">Bukan Pewarna</span>
+                                        @endif
+                                    </td>
                                     <!-- <td>
                                         @php($urldelete = '/dashboard/pembatik/delete/')
                                         <a href="{{ url($urldelete) . '/' . $index['id'] }}" class="badge badge-danger">Hapus</a>

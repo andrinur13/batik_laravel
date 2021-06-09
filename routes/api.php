@@ -20,3 +20,4 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 
 Route::get('pembatikpaguyuban/{kode}', [PembatikController::class, 'queryPembatikByPaguyuban']);
+Route::get('pembatikpewarna/{kode}', [PembatikController::class, 'queryPembatikPewarna']);

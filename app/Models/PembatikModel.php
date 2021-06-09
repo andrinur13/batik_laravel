@@ -11,5 +11,5 @@ class PembatikModel extends Model
     protected $table = 'pembatik';
     public $timestamps = false;
 
-    protected $fillable = ['id', 'nama_pembatik', 'kode_paguyuban', 'kode_pembatik', 'status'];
+    protected $fillable = ['id', 'nama_pembatik', 'kode_paguyuban', 'kode_pembatik', 'pewarna', 'status'];
 }

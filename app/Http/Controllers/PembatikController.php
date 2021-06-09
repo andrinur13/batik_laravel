@@ -41,4 +41,12 @@ class PembatikController extends Controller
             'batik' => $hasilQuery
         ], 200);
     }
+
+    public function queryPembatikPewarna($kode) {
+        $hasilQuery = PembatikModel::where(['kode_paguyuban' => $kode, 'pewarna' => 1])->get()->toArray();
+
+        return response()->json([
+            'pewarna' => $hasilQuery
+        ], 200);
+    }
 }
