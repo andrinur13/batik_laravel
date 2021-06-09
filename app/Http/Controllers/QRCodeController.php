@@ -52,4 +52,26 @@ class QRCodeController extends Controller
         return redirect('dashboard/qrcode');
         
     }
+
+    public function fetchCode($qr) {
+        $qrModel = new QRCodeModel();
+        $query = $qrModel->where(['qrcode' => $qr])->get()->toArray();
+
+        if($query == null) {
+            return response()->json([
+                'status' => 'failed',
+                'code' => 404,
+                'messages' => 'qrcode not found!'
+            ], 404);
+        } else {
+            $data = explode(".", $query[0]['qrcode']);
+            $terakhir = explode("-", $data[6]);
+            $terakhir = $terakhir[0];
+            return response()->json([
+                'status' => 'success',
+                'code' => 200,
+                'data' => [$data, $terakhir]
+            ]);
+        }
+    } 
 }
