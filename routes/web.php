@@ -3,10 +3,13 @@
 use App\Http\Controllers\BatikController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\FileController;
 use App\Http\Controllers\PaguyubanController;
 use App\Http\Controllers\PembatikController;
 use App\Http\Controllers\PewarnaanController;
 use App\Http\Controllers\QRCodeController;
+use App\Imports\BatikImport;
+use Maatwebsite\Excel\Facades\Excel;
 
 /*
 |--------------------------------------------------------------------------
@@ -44,3 +47,10 @@ Route::get('dashboard/pewarnaan', [PewarnaanController::class, 'index']);
 // qrcode
 Route::get('dashboard/qrcode/', [QRCodeController::class, 'index']);
 Route::post('dashboard/qrcode/store', [QRCodeController::class, 'store']);
+
+// file
+Route::get('file', [FileController::class, 'index']);
+Route::post('file/upload', [FileController::class, 'upload']);
+Route::get('file/paguyuban', [FileController::class, 'dataPaguyuban']);
+Route::get('file/pembatik', [FileController::class, 'dataPembatik']);
+Route::get('file/batik', [FileController::class, 'dataBatik']);
