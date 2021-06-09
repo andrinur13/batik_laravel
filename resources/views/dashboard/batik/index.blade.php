@@ -3,7 +3,7 @@
 @section('content')
 <div class="">
     <div class="row">
-        <div class="col-lg col-sm-10">
+        <div class="col-lg col-md col-sm">
             <div class="card shadow mb-4">
                 <div class="card-body">
                     <h5 class="font-weight-bold">Data Batik</h5>
