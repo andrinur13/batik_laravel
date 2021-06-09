@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Imports\BatikImport;
+use App\Imports\PaguyubanImport;
+use App\Imports\PembatikImport;
 use Illuminate\Http\Request;
 use Maatwebsite\Excel\Facades\Excel;
 
@@ -38,12 +40,12 @@ class FileController extends Controller
     }
 
     public function dataPaguyuban() {
-        Excel::import(new BatikImport, 'fileexcel/paguyuban.xlsx');
+        Excel::import(new PaguyubanImport, 'fileexcel/paguyuban.xlsx');
         return redirect('file');
     }
 
     public function dataPembatik() {
-        Excel::import(new BatikImport, 'fileexcel/pembatik.xlsx');
+        Excel::import(new PembatikImport, 'fileexcel/pembatik.xlsx');
         return redirect('file');
     }
 }
