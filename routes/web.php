@@ -54,3 +54,7 @@ Route::post('file/upload', [FileController::class, 'upload']);
 Route::get('file/paguyuban', [FileController::class, 'dataPaguyuban']);
 Route::get('file/pembatik', [FileController::class, 'dataPembatik']);
 Route::get('file/batik', [FileController::class, 'dataBatik']);
+
+Route::fallback(function() {
+    return view('error/index');
+});

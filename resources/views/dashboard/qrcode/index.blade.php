@@ -125,7 +125,7 @@
 @endsection
 
 @section('script-custom')
-<script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+<script src="{{env('VUE_JS')}}"></script>
 <script>
     var app = new Vue({
         el: '#app',
