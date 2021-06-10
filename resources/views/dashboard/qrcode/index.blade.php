@@ -154,7 +154,6 @@
 
                 fetch(`${this.urlSite}/api/pembatikpewarna/${this.filled.paguyuban}`).then(response => response.json()).then(
                     json => {
-                        console.log(json);
                         this.options.pewarnaan = json.pewarna;
                     }
                 );
