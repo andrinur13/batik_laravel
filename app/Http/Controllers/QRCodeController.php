@@ -6,7 +6,8 @@ use App\Models\PaguyubanModel;
 use App\Models\PembatikModel;
 use App\Models\BatikModel;
 use App\Models\QRCodeModel;
-use Illuminate\Support\Facades\Request;
+use Illuminate\Http\Request;
+use Illuminate\Http\Response;
 use SimpleSoftwareIO\QrCode\Facades\QrCode;
 
 class QRCodeController extends Controller
@@ -34,12 +35,12 @@ class QRCodeController extends Controller
         $code_from_input = $request->motif_batik . '.' . $request->nama_paguyuban . '.' . $request->nama_pembatik . '.' . $request->pewarnaan . '-' . time();
         $code_for_qr = $code_template . '.' . $code_from_input;
         $fileIMG = $request->file('foto_batik');
-        $pathQRCode = '/' . 'qrcodes/' . $code_for_qr . '.svg';
+        $pathQRCode = 'qrcodes/' . $code_for_qr . '.png';
 
-        QrCode::size(100)->generate($code_for_qr, '../public' . $pathQRCode);
-        $pathFoto = '/' . 'img/' . $fileIMG->getClientOriginalName() . '-' . time() . '.' . $fileIMG->getClientOriginalExtension();
+        QrCode::format('png')->size(500)->generate($code_for_qr, '../public/' . $pathQRCode);
+        $pathFoto = 'img/' . $fileIMG->getClientOriginalName() . '-' . time() . '.' . $fileIMG->getClientOriginalExtension();
 
-        $fileIMG->move('../public/img', '../public' . $pathFoto);
+        $fileIMG->move('../public/img/', '../public/' . $pathFoto);
 
         QRCodeModel::insert([
             'qrcode' => $code_for_qr,
@@ -51,6 +52,17 @@ class QRCodeController extends Controller
 
 
         return redirect('dashboard/qrcode');
+    }
+
+    public function download($id)
+    {
+
+        $query = QRCodeModel::where(['id' => $id])->get()->toArray();
+        $file = $query[0]['path_qrcode'];
+
+        // dd($file);
+
+        return response()->download($file);
     }
 
     public function fetchCode($qr)
@@ -76,13 +88,13 @@ class QRCodeController extends Controller
         // ambil data anggota pembatik
         $pembatikQuery = PembatikModel::where(['kode_paguyuban' => $data[4], 'kode_pembatik' => $data[5]])->get()->toArray();
         // ambil data motif
-        if($data[3] == '00') {
+        if ($data[3] == '00') {
             $motifQuery[0]['nama_batik'] = 'Kombinasi';
         } else {
             $motifQuery = BatikModel::where(['kode' => $data[3]])->get()->toArray();
         }
         // ambil data pewarnaan
-        if($data[6] == 'EX') {
+        if ($data[6] == 'EX') {
             $pewarnaanQuery[0]['nama_pembatik'] = 'Eksternal';
         } else {
             $pewarnaanQuery = PembatikModel::where(['pewarna' => 1, 'kode_paguyuban' => $data[4], 'kode_pembatik' => $data[6]])->get()->toArray();

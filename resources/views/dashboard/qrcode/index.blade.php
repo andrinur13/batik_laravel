@@ -13,7 +13,7 @@
                     <div class="table-responsive">
                         <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                             <thead>
-                                <tr>
+                                <tr class="text-center">
                                     <th>Gambar</th>
                                     <th>Kode</th>
                                     <th>QRCode</th>
@@ -24,11 +24,11 @@
                             <tbody>
                                 @foreach($qrcode as $qc)
                                 <tr>
-                                    <td> <img class="img-fluid" style="width: 50px" src="{{$qc['path_img']}}" alt=""> </td>
+                                    <td> <img class="img-fluid" style="width: 50px" src="{{ '/' . $qc['path_img']}}" alt=""> </td>
                                     <td class="font-weight-bold"> {{$qc['qrcode']}} </td>
-                                    <td> <img style="width: 50px" src="{{$qc['path_qrcode']}}" alt=""> </td>
+                                    <td> <img style="width: 50px" src="{{ '/' . $qc['path_qrcode']}}" alt=""> </td>
                                     <td> <span class="bg-success py-1 px-3 text-light font-weight-bold" style="border-radius: 10px;">{{$qc['grade']}}</span> </td>
-                                    <td> <span class="badge badge-primary">aksi</span> </td>
+                                    <td> <a href="{{ url('dashboard/qrcode/download/' . $qc['id']) }}" class="btn btn-primary"> <i class="fas fa-fw fa-download"></i> </a> </td>
                                 </tr>
                                 @endforeach
                             </tbody>

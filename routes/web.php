@@ -47,6 +47,7 @@ Route::get('dashboard/pewarnaan', [PewarnaanController::class, 'index']);
 // qrcode
 Route::get('dashboard/qrcode/', [QRCodeController::class, 'index']);
 Route::post('dashboard/qrcode/store', [QRCodeController::class, 'store']);
+Route::get('dashboard/qrcode/download/{id}', [QRCodeController::class, 'download']);
 
 // file
 Route::get('file', [FileController::class, 'index']);
