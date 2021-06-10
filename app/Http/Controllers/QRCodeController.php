@@ -46,7 +46,8 @@ class QRCodeController extends Controller
             'qrcode' => $code_for_qr,
             'path_qrcode' => $pathQRCode,
             'path_img' => $pathFoto,
-            'grade' => $request->grade
+            'grade' => $request->grade,
+            'deskripsi' => $request->deskripsibatik
         ]);
 
 
@@ -97,7 +98,9 @@ class QRCodeController extends Controller
                 'paguyuban' => $paguyubanQuery[0]['nama_paguyuban'],
                 'nama_pembatik' => $pembatikQuery[0]['nama_pembatik'],
                 'motif' => $motifQuery[0]['nama_batik'],
-                'pewarnaan' => $pewarnaanQuery[0]['nama_pembatik']
+                'pewarnaan' => $pewarnaanQuery[0]['nama_pembatik'],
+                'grade' => $query[0]['grade'],
+                'deskripsi' => $query[0]['deskripsi']
             ]
         ]);
     }

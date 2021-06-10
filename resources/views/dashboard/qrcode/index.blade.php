@@ -108,6 +108,11 @@
                         <input type="file" class="form-control" name="foto_batik" required>
                     </div>
 
+                    <div class="form-group">
+                        <label for="deskripsibatik">Deskripsi Batik</label>
+                        <textarea class="form-control" id="deskripsibatik" rows="4" name="deskripsibatik"></textarea>
+                    </div>
+
                 </div>
                 <div class="modal-footer">
                     <button type="submit" class="btn btn-primary">Tambah</button>
