@@ -11,6 +11,7 @@ class PembatikController extends Controller
     //
     public function index()
     {
+
         $dataPembatik = PembatikModel::get()->toArray();
         $dataPaguyuban = PaguyubanModel::get()->toArray();
         return view('dashboard/pembatik/index', ['pembatik' => $dataPembatik, 'paguyuban' => $dataPaguyuban]);
