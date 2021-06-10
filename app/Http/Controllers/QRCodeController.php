@@ -18,14 +18,12 @@ class QRCodeController extends Controller
         $dataPaguyuban = PaguyubanModel::get()->toArray();
         $dataPembatik = PembatikModel::get()->toArray();
         $dataBatik = BatikModel::get()->toArray();
-        $dataPewarnaan = PewarnaanModel::get()->toArray();
         $qrcode = QRCodeModel::get()->toArray();
 
         return view('dashboard/qrcode/index', [
             'paguyuban' => $dataPaguyuban,
             'pembatik' => $dataPembatik,
             'batik' => $dataBatik,
-            'pewarnaan' => $dataPewarnaan,
             'qrcode' => $qrcode
         ]);
     }
