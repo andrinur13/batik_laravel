@@ -34,7 +34,7 @@ class QRCodeController extends Controller
     {
 
         $code_template = "N.T.DIY";
-        $code_from_input = $request->nama_paguyuban . '.' . $request->nama_pembatik . '.' . $request->motif_batik . '.' . $request->pewarnaan . '-' . time();
+        $code_from_input = $request->motif_batik . '.' . $request->nama_paguyuban . '.' . $request->nama_pembatik . '.' . $request->pewarnaan . '-' . time();
         $code_for_qr = $code_template . '.' . $code_from_input;
         $fileIMG = $request->file('foto_batik');
         $pathQRCode = '/' . 'qrcodes/' . $code_for_qr . '.svg';
@@ -70,10 +70,36 @@ class QRCodeController extends Controller
         $data = explode(".", $query[0]['qrcode']);
         $terakhir = explode("-", $data[6]);
         $terakhir = $terakhir[0];
+        $data[6] = $terakhir;
+        // query data
+        // ambil paguyuban
+        $paguyubanQuery = PaguyubanModel::where(['kode' => $data[4]])->get()->toArray();
+        // ambil data anggota pembatik
+        $pembatikQuery = PembatikModel::where(['kode_paguyuban' => $data[4], 'kode_pembatik' => $data[5]])->get()->toArray();
+        // ambil data motif
+        if($data[3] == '00') {
+            $motifQuery[0]['nama_batik'] = 'Kombinasi';
+        } else {
+            $motifQuery = BatikModel::where(['kode' => $data[3]])->get()->toArray();
+        }
+        // ambil data pewarnaan
+        if($data[6] == 'EX') {
+            $pewarnaanQuery[0]['nama_pembatik'] = 'Eksternal';
+        } else {
+            $pewarnaanQuery = PembatikModel::where(['pewarna' => 1, 'kode_paguyuban' => $data[4], 'kode_pembatik' => $data[6]])->get()->toArray();
+        }
+
         return response()->json([
             'status' => 'success',
             'code' => 200,
-            'data' => [$data, $terakhir]
+            'data' => [
+                'img_url' => $query[0]['path_img'],
+                'qr_url' => $query[0]['path_qrcode'],
+                'paguyuban' => $paguyubanQuery[0]['nama_paguyuban'],
+                'nama_pembatik' => $pembatikQuery[0]['nama_pembatik'],
+                'motif' => $motifQuery[0]['nama_batik'],
+                'pewarnaan' => $pewarnaanQuery[0]['nama_pembatik']
+            ]
         ]);
     }
 }
