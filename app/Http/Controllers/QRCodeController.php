@@ -45,7 +45,8 @@ class QRCodeController extends Controller
         QRCodeModel::insert([
             'qrcode' => $code_for_qr,
             'path_qrcode' => $pathQRCode,
-            'path_img' => $pathFoto
+            'path_img' => $pathFoto,
+            'grade' => $request->grade
         ]);
 
 

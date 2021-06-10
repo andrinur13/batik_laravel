@@ -17,6 +17,7 @@
                                     <th>Gambar</th>
                                     <th>Kode</th>
                                     <th>QRCode</th>
+                                    <th>Grade</th>
                                     <th>Aksi</th>
                                 </tr>
                             </thead>
@@ -26,6 +27,7 @@
                                     <td> <img class="img-fluid" style="width: 50px" src="{{$qc['path_img']}}" alt=""> </td>
                                     <td class="font-weight-bold"> {{$qc['qrcode']}} </td>
                                     <td> <img style="width: 50px" src="{{$qc['path_qrcode']}}" alt=""> </td>
+                                    <td> <span class="bg-success py-1 px-3 text-light font-weight-bold" style="border-radius: 10px;">{{$qc['grade']}}</span> </td>
                                     <td> <span class="badge badge-primary">aksi</span> </td>
                                 </tr>
                                 @endforeach
@@ -88,6 +90,16 @@
                             <option selected value="null">Pilih Pewarnaan...</option>
                             <option value="EX">Eksternal</option>
                             <option v-for="item in options.pewarnaan" :value="item.kode_pembatik" v-text="item.nama_pembatik"> </option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="pewarnaan">Grade</label>
+                        <select class="custom-select" name="grade">
+                            <option selected value="null">Pilih Pewarnaan...</option>
+                            <option value="A">A</option>
+                            <option value="B">B</option>
+                            <option value="C">C</option>
                         </select>
                     </div>
 
