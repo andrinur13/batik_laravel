@@ -2,12 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use App\Models\PaguyubanModel;
 use App\Models\PembatikModel;
 use App\Models\BatikModel;
-use App\Models\PewarnaanModel;
 use App\Models\QRCodeModel;
+use Illuminate\Support\Facades\Request;
 use SimpleSoftwareIO\QrCode\Facades\QrCode;
 
 class QRCodeController extends Controller

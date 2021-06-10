@@ -1,4 +1,8 @@
 <!-- Sidebar -->
+<?php
+use Illuminate\Support\Facades\Request;
+$urlSegment = Request::segments();
+?>
 
 <!-- Sidebar - Brand -->
 <a class="sidebar-brand d-flex align-items-center justify-content-center" href="{{url('/dashboard')}}">
@@ -12,10 +16,11 @@
 <hr class="sidebar-divider my-0">
 
 <!-- Nav Item - Dashboard -->
-<li class="nav-item active">
-    <a class="nav-link" href="{{url('/dashboard')}}">
+<li class="nav-item {{end($urlSegment) == 'dashboard' ? 'active' : ''}}">
+    <a class="nav-link }" href="{{url('/dashboard')}}">
         <i class="fas fa-fw fa-tachometer-alt"></i>
-        <span>Dashboard</span></a>
+        <span>Dashboard</span>
+    </a>
 </li>
 
 <!-- Divider -->
@@ -27,7 +32,7 @@
 </div>
 
 <!-- nav paguyuban -->
-<li class="nav-item">
+<li class="nav-item {{end($urlSegment) == 'paguyuban' ? 'active' : ''}}">
     <a class="nav-link collapsed" href="{{url('/dashboard/paguyuban')}}">
         <i class="fas fa-fw fa-users"></i>
         <span>Paguyuban</span>
@@ -35,7 +40,7 @@
 </li>
 
 <!-- nav pembatik -->
-<li class="nav-item">
+<li class="nav-item {{end($urlSegment) == 'pembatik' ? 'active' : ''}}">
     <a class="nav-link collapsed" href="{{ url('/dashboard/pembatik') }}">
         <i class="fas fa-fw fa-palette"></i>
         <span>Pembatik</span>
@@ -43,7 +48,7 @@
 </li>
 
 <!-- nav batik -->
-<li class="nav-item">
+<li class="nav-item {{end($urlSegment) == 'batik' ? 'active' : ''}}">
     <a class="nav-link collapsed" href="{{ url('/dashboard/batik') }}">
         <i class="fas fa-fw fa-tshirt"></i>
         <span>Batik</span>
@@ -66,7 +71,7 @@
 </div>
 
 <!-- Nav Item - Utilities Collapse Menu -->
-<li class="nav-item">
+<li class="nav-item {{end($urlSegment) == 'qrcode' ? 'active' : ''}}">
     <a class="nav-link collapsed" href="{{ url('/dashboard/qrcode') }}">
         <i class="fas fa-fw fa-qrcode"></i>
         <span>Kode (QR)</span>
