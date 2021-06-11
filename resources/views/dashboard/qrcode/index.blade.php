@@ -100,6 +100,7 @@
                             <option value="A">A</option>
                             <option value="B">B</option>
                             <option value="C">C</option>
+                            <option value="0">Belum di Nilai</option>
                         </select>
                     </div>
 
