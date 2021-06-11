@@ -15,7 +15,7 @@
         <li class="nav-item dropdown no-arrow">
             <div class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" aria-haspopup="true" aria-expanded="false">
                 <span class="mr-2 d-none d-lg-inline text-gray-600 small">Admin</span>
-                <img class="img-profile rounded-circle" src="{{ url('theme/img/undraw_profile_1.svg') }}">
+                <img class="img-profile rounded-circle" src="{{ url('theme/img/undraw_profile.svg') }}">
             </div>
             <!-- Dropdown - User Information -->
             <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">

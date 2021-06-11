@@ -9,7 +9,7 @@ $urlSegment = Request::segments();
     <div class="sidebar-brand-icon rotate-n-15">
         <i class="fas fa-laugh-wink"></i>
     </div>
-    <div class="sidebar-brand-text mx-3">Apip Batik</div>
+    <div class="sidebar-brand-text mx-3">SiBatik</div>
 </a>
 
 <!-- Divider -->
