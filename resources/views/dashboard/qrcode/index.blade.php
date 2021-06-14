@@ -57,7 +57,7 @@
 
                     <div class="form-group">
                         <label for="motif_batik">Motif Batik</label>
-                        <select class="custom-select" name="motif_batik">
+                        <select class="custom-select" name="motif_batik" required>
                             <option selected>Pilih Batik...</option>
                             <option value="00">Dominan</option>
                             @foreach($batik as $btk)
@@ -68,7 +68,7 @@
 
                     <div class="form-group">
                         <label for="nama-paguyuban">Nama Paguyuban</label>
-                        <select class="custom-select" name="nama_paguyuban" v-model="filled.paguyuban">
+                        <select class="custom-select" name="nama_paguyuban" v-model="filled.paguyuban" required>
                             <option value="null" selected>Pilih Paguyuban...</option>
                             @foreach($paguyuban as $pgy)
                             <option value="{{ $pgy['kode'] }}"> {{$pgy['nama_paguyuban']}} </option>
@@ -78,7 +78,7 @@
 
                     <div class="form-group">
                         <label for="nama_pembatik">Nama Pembatik</label>
-                        <select class="custom-select" name="nama_pembatik" v-model="filled.pembatik">
+                        <select class="custom-select" name="nama_pembatik" v-model="filled.pembatik" required>
                             <option selected value="null">Pilih Pembatik...</option>
                             <option v-for="item in options.pembatik" :value="item.kode_pembatik" v-text="item.nama_pembatik"></option>
                         </select>
@@ -86,7 +86,7 @@
 
                     <div class="form-group">
                         <label for="pewarnaan">Pewarnaan</label>
-                        <select class="custom-select" name="pewarnaan" v-model="filled.pewarnaan">
+                        <select class="custom-select" name="pewarnaan" v-model="filled.pewarnaan" required>
                             <option selected value="null">Pilih Pewarnaan...</option>
                             <option value="EX">Eksternal</option>
                             <option v-for="item in options.pewarnaan" :value="item.kode_pembatik" v-text="item.nama_pembatik"> </option>
@@ -95,7 +95,7 @@
 
                     <div class="form-group">
                         <label for="pewarnaan">Grade</label>
-                        <select class="custom-select" name="grade">
+                        <select class="custom-select" name="grade" required>
                             <option selected value="null">Pilih Pewarnaan...</option>
                             <option value="A">A</option>
                             <option value="B">B</option>
@@ -111,7 +111,7 @@
 
                     <div class="form-group">
                         <label for="deskripsibatik">Deskripsi Batik</label>
-                        <textarea class="form-control" id="deskripsibatik" rows="4" name="deskripsibatik"></textarea>
+                        <textarea class="form-control" id="deskripsibatik" rows="4" name="deskripsibatik" required></textarea>
                     </div>
 
                 </div>

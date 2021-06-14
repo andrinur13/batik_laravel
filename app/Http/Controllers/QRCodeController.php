@@ -30,6 +30,12 @@ class QRCodeController extends Controller
 
     public function store(Request $request)
     {
+        $request->validate([
+            'motif_batik' => ['required'],
+            'nama_paguyuban' => ['required'],
+            'nama_pembatik' => ['required'],
+            'pewarnaan' => ['required']
+        ]);
 
         $code_template = "P.N.DIY";
         $code_from_input = $request->motif_batik . '.' . $request->nama_paguyuban . '.' . $request->nama_pembatik . '.' . $request->pewarnaan . '-' . time();
