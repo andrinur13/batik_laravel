@@ -117,7 +117,8 @@ class QRCodeController extends Controller
                 'motif' => $motifQuery[0]['nama_batik'],
                 'pewarnaan' => $pewarnaanQuery[0]['nama_pembatik'],
                 'grade' => $query[0]['grade'],
-                'deskripsi' => $query[0]['deskripsi']
+                'deskripsi' => $query[0]['deskripsi'],
+                'filosofi' => $motifQuery[0]['filosofi']
             ]
         ]);
     }
