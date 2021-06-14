@@ -17,7 +17,8 @@ class BatikImport implements ToModel
         return new BatikModel([
             //
             'nama_batik' => $row[0],
-            'kode' => $row[1]
+            'kode' => $row[1],
+            'filosofi' => $row[2]
         ]);
     }
 }

@@ -11,5 +11,5 @@ class BatikModel extends Model
     protected $table = 'batik';
     public $timestamps = false;
 
-    protected $fillable = ['id', 'nama_batik', 'kode'];
+    protected $fillable = ['id', 'nama_batik', 'kode', 'filosofi'];
 }
