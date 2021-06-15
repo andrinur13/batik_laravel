@@ -59,7 +59,7 @@
                         <label for="motif_batik">Motif Batik</label>
                         <select class="custom-select" name="motif_batik" required>
                             <option selected>Pilih Batik...</option>
-                            <option value="00">Dominan</option>
+                            <option value="00">Kombinasi</option>
                             @foreach($batik as $btk)
                             <option value="{{ $btk['kode'] }}"> {{$btk['nama_batik']}} </option>
                             @endforeach
