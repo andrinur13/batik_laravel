@@ -118,7 +118,7 @@ class QRCodeController extends Controller
                 'pewarnaan' => $pewarnaanQuery[0]['nama_pembatik'],
                 'grade' => $query[0]['grade'],
                 'deskripsi' => $query[0]['deskripsi'],
-                'filosofi' => $motifQuery[0]['filosofi']
+                'filosofi' => isset($motifQuery[0]['filosofi']) ? $motifQuery[0]['filosofi'] : '-'
             ]
         ]);
     }
